@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmy - Digital Transformation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2b46 0%, #1a4b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .company-info {
+            flex: 1;
+            background: linear-gradient(135deg, #0d233b 0%, #163862 100%);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .login-container {
+            flex: 1;
+            background-color: white;
+            padding: 50px 40px;
+            color: #333;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #4dc2f0;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #a0c5e6;
+        }
+        
+        .features {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+        
+        .features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features i {
+            color: #4dc2f0;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .login-form {
+            text-align: left;
+        }
+        
+        .form-header {
+            margin-bottom: 30px;
+        }
+        
+        .form-header h2 {
+            color: #2c5282;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: #718096;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #4299e1;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #2c5282;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .login-btn:hover {
+            background-color: #2b6cb0;
+        }
+        
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .message {
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+        }
+        
+        .success {
+            background-color: #c6f6d5;
+            color: #2f855a;
+            display: block;
+        }
+        
+        .error {
+            background-color: #fed7d7;
+            color: #c53030;
+            display: block;
+        }
+        
+        .docker-info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #4299e1;
+            font-size: 14px;
+        }
+        
+        .docker-info h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .docker-info h3 i {
+            margin-right: 8px;
+            color: #2496ed;
+        }
+        
+        .docker-info p {
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        
+        .port-info {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #ebf8ff;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        
+        .port-info strong {
+            color: #2b6cb0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .company-info, .login-container {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="company-info">
+            <div class="logo">HELMY</div>
+            <p class="tagline">Digital Transformation Solutions for the Modern Enterprise</p>
+            
+            <ul class="features">
+                <li><i class="fas fa-cloud-arrow-up"></i> Cloud Infrastructure & Migration</li>
+                <li><i class="fas fa-robot"></i> AI & Automation Solutions</li>
+                <li><i class="fas fa-chart-line"></i> Data Analytics & Business Intelligence</li>
+                <li><i class="fas fa-shield-alt"></i> Cybersecurity & Compliance</li>
+                <li><i class="fas fa-mobile-alt"></i> Digital Experience Platforms</li>
+            </ul>
+        </div>
+        
+        <div class="login-container">
+            <div class="form-header">
+                <h2>Sign into your account</h2>
+                <p>Enter your credentials to access the portal</p>
+            </div>
+            
+            <div id="message" class="message"></div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Email address</label>
+                    <input type="email" id="username" name="username" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <button type="submit" class="login-btn">Log In</button>
+                
+                <a href="#" class="forgot-password">Forgot your password?</a>
+            </form>
+            
+            <div class="docker-info">
+                <h3><i class="fab fa-docker"></i> Docker Deployment Ready</h3>
+                <p>This application is configured to run with Docker Compose using NGINX as a web server and MariaDB for data storage.</p>
+                
+                <div class="port-info">
+                    <p><strong>Port Configuration:</strong></p>
+                    <p>HTTP: Port 8000 (http://localhost:8000)</p>
+                    <p>MariaDB: Internal network only</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageEl = document.getElementById('message');
+            
+            // Simple validation
+            if (!username || !password) {
+                messageEl.textContent = 'Please fill in all fields';
+                messageEl.className = 'message error';
+                return;
+            }
+            
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(username)) {
+                messageEl.textContent = 'Please enter a valid email address';
+                messageEl.className = 'message error';
+                return;
+            }
+            
+            // Simulate login process
+            messageEl.textContent = 'Logging in...';
+            messageEl.className = 'message';
+            
+            // Simulate server response
+            setTimeout(() => {
+                // This is a simulation - in reality, you would send this to your backend
+                if (username === 'admin@helmy.com' && password === 'password') {
+                    messageEl.textContent = 'Login successful! Redirecting to dashboard...';
+                    messageEl.className = 'message success';
+                    
+                    // Redirect to dashboard after successful login
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 1500);
+                } else {
+                    messageEl.textContent = 'Invalid credentials. Please try again.';
+                    messageEl.className = 'message error';
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
